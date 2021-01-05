@@ -35,12 +35,12 @@ export default function Home() {
                 <div className={styles.big_text_div}>
                     <div>
                         <span className={styles.big_text}>
-                            Build your
+                            Build <span className="">your</span>
                         </span>
                     </div>
                     <div>
                         <span className={styles.big_text}>
-                            world online
+                        <span className="">world</span> online
                         </span>
                     </div> 
                 </div>
