@@ -27,37 +27,31 @@
 }
 .second_container{
   width: 100%;
-  height: 2024px;
+  height: 2100px;
   background: radial-gradient(102.37% 100% at 0% 100%, #160B2E 0%, #050012 100%);
   margin-top: -300px;
-  transform: rotate(0);
-  padding: 0 10rem;
+  padding: 70px 0;
 }
 .third_container{
-  width: 113%;/* 1625.5px/1440px */
   height: 415.5px;
-  margin-left: calc(-6.5%);/* -93px/1440px */
-  margin-top: -239px;
+  margin-top: -158px;
   background-image: url("/images/Vector-1.png");
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 120px;
 }
 .fourth_container{
-  width: 100%;
   background-image: url("/images/Vector-2.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 979px;
-  margin-top: -292px;
+  margin-top: -300px;
+  padding-top: 350px;
 }
 .footer {
   width: 100%;
   height: 210px;
   background: #050012;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  padding-top: 80px;
 }
 .logo_title_gradiant{
   font-family: Inter;
@@ -80,11 +74,6 @@
   color: white;
   height: 2.5rem;
   width: 3rem;
-}
-.devide_line{
-  width: 21rem;
-  height: 2px;
-  background: linear-gradient(92.22deg, #5236FF 0%, #C20560 100%);
 }
 .menu_btn{
   background: transparent;
@@ -125,6 +114,9 @@
   height: 2px;
   margin-bottom: 3rem;
 }
+.mission_txt_div{
+  padding-top: 270px;
+}
 .line_top_1{
   width: 120%;
   margin-left: -10%;
@@ -137,7 +129,86 @@
   width: 80%;
   margin-left: 10%;
 }
-
+.middle_component_circle_1{
+  background: radial-gradient(100% 100% at 50% 0%, #5236FF 0%, rgba(82, 54, 255, 0) 100%);
+  opacity: 0.1;
+  border-radius: 80px;
+  transform: rotate(-180deg);
+  width: 100px;
+  height: 100px;
+  margin-top: 150px;
+}
+.middle_component_circle_2{
+  background: radial-gradient(100% 100% at 50% 0%, #5236FF 0%, rgba(82, 54, 255, 0) 100%);
+  opacity: 0.1;
+  border-radius: 50%;
+  transform: rotate(-180deg);
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 0;
+  top: 285px;
+}
+.middle_component_circle_3{
+  background: radial-gradient(100% 100% at 50% 0%, #5236FF 0%, rgba(82, 54, 255, 0) 100%);
+  opacity: 0.1;
+  border-radius: 80px;
+  transform: rotate(-180deg);
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  top: 85px;
+}
+.middle_component_line_div_1{
+  width: 51px;
+  margin: 130px auto 0;
+}
+.middle_component_line_1{
+  width: 51px;
+}
+.middle_component_line_gap_1{
+  width: 16px;
+  height: 27px;
+  background: rgba(82, 54, 255, 0.1);
+  backdrop-filter: blur(64px);
+  margin: 0 auto -30px;
+}
+.middle_component_line_gap_2{
+  width: 17px;
+  height: 27px;
+  background: rgba(82, 54, 255, 0.1);
+  backdrop-filter: blur(64px);
+  margin: 0 auto -30px;
+}
+.middle_component_line_div_2{
+  width: 52px;
+  margin: 80px auto 0;
+}
+.middle_component_line_div_3{
+  width: 51px;
+  margin: 190px auto 0;
+}
+.main_carousel{
+  margin: 300px auto 0;
+  width: 1000px;
+  z-index: 1;
+}
+.moon_svg{
+  position: absolute;
+  right: 0px;
+  top: 60px;
+}
+.firstname_input{
+  width: 49%!important;
+  margin-right: 2%;
+}
+.lastname_input{
+  width: 49%!important;
+}
+.logo_lagunalabs{
+  width: 200px;
+}
 @media (max-width: 600px) {
 
 }
