@@ -3,8 +3,13 @@ import styles from '../styles/Home.module.css'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Carousel from 'react-bootstrap/Carousel' 
+import { useState } from 'react'
 
 export default function Home() { 
+    const [modalShown, setShowModal] = useState(false)
+
+    const showModal=()=>setShowModal(true);
+    const hideModal=()=>setShowModal(false);
     return (
     <div className={styles.container}>
         <Head>
@@ -12,10 +17,44 @@ export default function Home() {
             <link rel="icon" href="images/favicon.png" />
             <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'/>
             <link rel="preconnect" href="https://fonts.gstatic.com"/> 
-            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;600;900&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;900&display=swap" rel="stylesheet"/>
         </Head>
 
-        <main className={styles.main}>
+
+            <div className={modalShown?styles.menu_container:"hidden"}>
+                <div className="row pt-5rem pb-2">
+                    <div className="col-10">
+                        <div className="desktop-container">
+                            <span className={styles.logo_title_gradiant}>LAGUNA </span> 
+                            <span className={[styles.logo_title_gradiant, styles.white_font].join(" ")}>LABS</span>
+                        </div>
+                    </div>
+                    <div className="col-2 menu_icon_div">
+                        <button className={styles.menu_btn} onClick={hideModal}>
+                            <FontAwesomeIcon icon={faBars} className={styles.menu_icon}/>
+                        </button>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <div className="devide_line"></div>
+                    </div>
+                </div>
+                <div className="row text-center menu-div mt-5">
+                    <p className="col-12 pt-3 menu-txt">Documentation</p>
+                    <p className="col-12 pt-3 menu-txt">Faqs</p>
+                    <p className="col-12 pt-3 menu-txt">About Us</p>
+                    <p className="col-12 pt-3 menu-txt">Support & Contact</p>
+                    <p className="col-12 pt-3 menu-txt">Social</p>
+                    
+                    <button className="main_button mt-5">Sign Up</button>
+                    <button className="main_button mt-3 p-0">
+                        <div className="main_button_outline_div">Log In</div>
+                    </button>
+                </div>
+            </div>
+
+        <main className={!modalShown?styles.main:"hidden"}>
             <div className={[styles.first_container,styles.subcontainer].join(" ")}>
                 <div className="row pt-5rem pb-2">
                     <div className="col-10">
@@ -24,8 +63,8 @@ export default function Home() {
                             <span className={[styles.logo_title_gradiant, styles.white_font].join(" ")}>LABS</span>
                         </div>
                     </div>
-                    <div className="col-2">
-                        <button className={styles.menu_btn}>
+                    <div className="col-2 menu_icon_div">
+                        <button className={styles.menu_btn} onClick={showModal}>
                             <FontAwesomeIcon icon={faBars} className={styles.menu_icon}/>
                         </button>
                     </div>
@@ -61,12 +100,10 @@ export default function Home() {
                 </div>
                 <div className="gradiant_horizontal">
                     <div className={styles.mission_txt_div}>
-                        <p className="desktop_section_title">Our Mission</p>
-                        <div className="pt-4">
+                        <p className="desktop_section_title mission_txt_title">Our Mission</p>
+                        <div className="pt-4 desktop-container">
                             <p className="main-text">
                                 We all need to do business and stay connected to loved ones, regardless of what's happening in the world outside. Our applications
-                            </p>
-                            <p className="main-text">
                                 are immediates, lightweight, and designed to reach peopel on the devices have today as well as the devices they'll have tomorrow
                             </p>
                         </div>
@@ -103,16 +140,15 @@ export default function Home() {
                         <div className={styles.middle_component_circle_3}></div>
                     </div>
                 </div>
-                <div className="row mt-minus-5 desktop-container">
-                    <div className="col-6">
+                <div className="row mt-minus-5 desktop-container overlay_div">
+                    <div className="col-6 overlay_txt mobile-container">
                         <p className="desktop_section_title text-left">The Overlay</p>
                         <p className="desktop_sub_title">Your home in the spatial web</p>
                         <p className="main-text text-left">
                             Virtual places on any device with a web browser, from your mobile phone or laptop to VR and AR. Run a business, present a keynote, hold a conference or throw an event, right from your own website. No App Store. No installation. One click and you're there.
                         </p>
                     </div>
-                    <div className="col-1"></div>
-                    <div className="col-5">
+                    <div className="col-5 overlay_logo mobile-container">
                         <object className="mt-5 pt-5" data="images/overlay_mark.svg"></object>
                     </div>
                 </div>
@@ -165,29 +201,29 @@ export default function Home() {
             <div className={styles.third_container}>
                 <div className="xr_engine_div">
                     <div className="desktop-container row">
-                        <div className="col-6 text-left pt-5">
-                            <object data="images/xrengine.svg"></object>
+                        <div className="col-6 xrengine_logo mobile-container">
+                            <object data="images/xrengine.svg" className="xrenginLogImg"></object>
                             <object className={styles.moon_svg} data="images/moon.svg"></object>
                         </div>
-                        <div className="col-6 z-index-9">
+                        <div className="col-6 z-index-9 xrengine_txt mobile-container">
                             <p className="desktop_section_title text-left">XREngine</p>
                             <p className="desktop_sub_title">The social multiplayer engine for the future</p>
                             <p className="main-text text-left">
                                 XREngine is a cross platform social engine for realtime voice, video, chat, avatars and computer vision. Built with scalability in mind on web standards, it's the fastest way to deliver scalable real-time apps.
                             </p>
-                            <button className="main_button mt-5">Visit Project Page</button>
+                            <button className="main_button mt-5 mobile_none">Visit Project Page</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div className={styles.fourth_container}>
-                <div className="desktop-container row">
-                    <div className="col-4 mt-50">
+                <div className="desktop-container row get_touch_div">
+                    <div className="col-4 mt-50 get_touch_txt mobile-container">
                         <p className="desktop_section_title text-left">Get in touch</p>
                         <p className="desktop_sub_title pr-5">Contact us for start of partnership</p>
-                        <img src="images/contact_rocket.png" className="mt-4"/>
+                        <img src="images/contact_rocket.png" className="mt-4 mobile_none contact_rocket"/>
                     </div>
-                    <div className="col-8 contact_input_div mt-4">
+                    <div className="col-8 contact_input_div mt-4 get_touch_input mobile-container">
                         <div className="row">
                             <input type="text" className={styles.firstname_input} placeholder="First Name"/>
                             <input type="text" className={styles.lastname_input} placeholder="Last Name"/>
@@ -208,25 +244,26 @@ export default function Home() {
                 </div>
             </div>
             <div className={styles.footer}>
-                <div className="desktop-container row">
-                    <div className="col-5">
+                <div className="desktop-container row footer-div">
+                    <div className="col-5 mobile-container text-left">
                         <object data="images/logo_lagunalabs.svg" className={styles.logo_lagunalabs}/>
                     </div>
-                    <div className="col-7 text-right social_icon_div">
-                        <object data="images/twitter.svg"/>
+                    <div className="col-7 social_icon_div mobile-container">
+                        <object data="images/twitter.svg" className="twitter-svg"/>
                         <object data="images/linkedin.svg"/>
                         <object data="images/facebook.svg"/>
                         <object data="images/email.svg"/>
                         <object data="images/github.svg"/>
                     </div>
-                    <div className="col-5">
+                    <div className="col-5 mobile-container privacy-txt-div">
                         <div className="width-200 pt-3 bottom_main_text_div_left">
                             <p className="bottom_main_text">Privacy Policy</p>
                             <p className="bottom_main_text">Support</p>
                         </div>
                     </div>
-                    <div className="col-7 pt-3 text-right">
-                        <p className="bottom_main_text">Terms of service @ 2020 Laguna Labs Team. All Rights Reserved</p>
+                    <div className="col-7 pt-3 mobile-container terms-txt-div">
+                        <span className="bottom_main_text">Terms of service&nbsp;</span>
+                        <span className="bottom_main_text">@ 2020 Laguna Labs Team. All Rights Reserved</span>
                     </div>
                 </div>
             </div>
@@ -234,6 +271,7 @@ export default function Home() {
 
         {/* <footer className={styles.footer}>
         </footer> */}
+        
     </div>
     )
 }

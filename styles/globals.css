@@ -16,13 +16,19 @@ p{
   box-sizing: border-box;
   font-family: Inter;
 }
+.row{
+  margin-right: 0!important;
+  margin-left: 0!important;
+}
 .pt-5rem{
   padding-top: 5rem;
 }
 .desktop-container{
   padding: 0 20rem;
 }
-
+.hidden{
+  display: none;
+}
 .mt-150{
   margin-top: 150px;
 }
@@ -57,7 +63,7 @@ p{
   font-size: 1.1rem;
   text-align: center;
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
 }
 .gradiant_horizontal{
   background: linear-gradient(180deg, rgba(5, 0, 18, 0) 0%, #050012 80%);
@@ -116,6 +122,9 @@ p{
   display: flex;
   justify-content: space-between;
 }
+.social_icon_div{
+  text-align: right;
+}
 .social_icon_div object{
   margin-left: 2rem;
 }
@@ -128,6 +137,56 @@ p{
   margin-top: -210px;
   width: 100%;
   padding: 0 5%;
+}
+.menu_icon_div{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.overlay_div{
+  position: relative;
+}
+.overlay_logo{
+  margin-left: 8%;
+}
+.xrengine_logo{
+  text-align: left;
+  padding-top: 3rem;
+}
+.get_touch_div{
+  position: relative;
+}
+.footer-div{
+  position: relative;
+}
+.terms-txt-div{
+  text-align: right;
+}
+.menu-txt{
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.menu-div{
+  width: 90%;
+  margin: 0 auto!important;
+}
+.signup-btn{
+  padding: 2rem;
+}
+.login-btn{
+  background: none;
+  height: fit-content;
+  padding: 0;
+}
+.login-btn object{
+  width: 100%;
+}
+.main_button_outline_div{
+  width: calc(100% - 4px);
+  background: black;
+  height: 44px;
+  line-height: 2.5rem;
+  border-radius: 6px;
+  margin: auto;
 }
 @media (max-width: 1920px) {
   .desktop-container{
@@ -161,5 +220,145 @@ p{
     width: 21rem;
   }
 }
-/* 1300px mobile view */
+
+/* pad view */
+@media (max-width: 1300px) {
+  .contact_rocket{
+    width: 130px;
+  }
+  .xrenginLogImg{
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .desktop-container{
+    padding: 0 7rem;
+  }
+  .devide_line{
+    width: 17.8rem;
+  }
+  .mobile-container{
+    position: absolute!important;
+    margin: 0;
+    max-width: 100%!important;
+    text-align: center;
+    width: calc(100% - 14rem)!important;
+    padding: 0!important;
+    top: 0;
+  }
+  .overlay_txt{
+    top: 170px;
+  }
+  .overlay_div{
+    height: 400px;
+  }
+  .carousel-control-prev {
+    left: 0!important;
+  }
+  .carousel-control-next {
+    right: 0!important;
+  }
+  .xrengine_logo{
+    text-align: center;
+  }
+  .xrengine_txt{
+    top: 150px;
+  }
+  .xrenginLogImg{
+    width: 350px;
+  }
+  .get_touch_input {
+    top: 150px;
+  }
+  .mobile_none{
+    display: none;
+  }
+  .social_icon_div {
+    top: 50px;
+    text-align: left;
+  }
+  .privacy-txt-div{
+    top: 120px;
+  }
+  .terms-txt-div{
+    text-align: left;
+    top: 150px;
+  }
+  .twitter-svg{
+    margin-left: 0!important;
+  }
+}
+/* mobile view */
+@media (max-width: 762px) {
+  .desktop-container{
+    padding: 0 3rem;
+  }
+  .mobile-container{
+    width: calc(100% - 6rem)!important;
+  }
+  .main_button{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  .devide_line{
+    width: 12rem;
+  }
+  .menu_icon_div{
+    padding: 0!important;
+  }
+  .gradiant_horizontal{
+    margin-top: -285px;
+  }
+  .main-text{
+    text-align: left;
+  }
+  .mission_txt_title{
+    margin-bottom: -1rem;
+  }
+  .desktop_section_title {
+    font-size: 2.5rem;
+  }
+  .overlay_logo object{
+    width: 100%;
+  }
+  .carousel-control-prev-icon {
+    width: 30px!important;
+    height: 30px!important;
+  }
+  .carousel-control-next-icon {
+    width: 30px!important;
+    height: 30px!important;
+  }
+  .overlay_slide_back_div {
+    margin-top: -135px;
+  }
+  .overlay_slide_back_div object{
+    width: 100%;
+  }
+  .carousel-item img {
+    height: 65vw!important;
+  }
+}
+@media (max-width: 500px) {
+  .desktop-container{
+    padding: 0 2rem;
+  }
+  .mobile-container{
+    width: calc(100% - 4rem)!important;
+  }
+  .devide_line{
+    width: 11rem;
+  }
+  .overlay_slide_back_div {
+    margin-top: -90px;
+  }
+  .xrenginLogImg{
+    width: 100%;
+  }
+  .social_icon_div object{
+    width: 40px;
+    margin-left: 1rem;
+  }
+}
 
