@@ -82,12 +82,11 @@ p{
   position: relative;
 }
 .carousel-control-prev-icon {
-  background-image: url('/images/arrow_back.svg')!important;
   width: 40px!important;
   height: 40px!important;
 }
 .carousel-control-next-icon {
-  background-image: url('/images/arrow_forward.svg')!important;
+  /* background-image: url('/images/arrow_forward.svg')!important; */
   width: 40px!important;
   height: 40px!important;
 }
@@ -187,6 +186,10 @@ p{
   line-height: 2.5rem;
   border-radius: 6px;
   margin: auto;
+}
+.carousel-item img {
+  border-radius: 10px;
+  height: 513px;
 }
 @media (max-width: 1920px) {
   .desktop-container{

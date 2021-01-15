@@ -55,7 +55,8 @@ export default function Home() {
             </div>
 
         <main className={!modalShown?styles.main:"hidden"}>
-            <div className={[styles.first_container,styles.subcontainer].join(" ")}>
+            <div className={[styles.first_container,styles.subcontainer].join(" ")}
+            style={{"background-image":"url('images/background-1.jpeg')"}}>
                 <div className="row pt-5rem pb-2">
                     <div className="col-10">
                         <div className="desktop-container">
@@ -154,13 +155,13 @@ export default function Home() {
                 </div>
                 <div className="row position_relative">
                     <Carousel className={styles.main_carousel} 
-                        // prevIcon={<object data="images/arrow_back.svg" type="image/svg+xml"/>}
-                        // nextIcon={<object data="images/arrow_forward.svg" type="image/svg+xml"/>}
+                        prevIcon={<object data="images/arrow_back.svg" type="image/svg+xml"/>}
+                        nextIcon={<object data="images/arrow_forward.svg" type="image/svg+xml"/>}
                         indicators={false}>
                         <Carousel.Item>
                             <img
                             className="d-block w-100"
-                            src="images/blank_img_carousel.png"
+                            src="images/slider/1.jpg"
                             alt="First slide"/>
                             {/* <Carousel.Caption>
                             <h3>First slide label</h3>
@@ -168,37 +169,28 @@ export default function Home() {
                             </Carousel.Caption> */}
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src="images/blank_img_carousel.png"
-                            alt="Second slide"
-                            />
-
-                            {/* <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </Carousel.Caption> */}
+                            <img className="d-block w-100" src="images/slider/2.png" alt="Third slide" />
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src="images/blank_img_carousel.png"
-                            alt="Third slide"
-                            />
-
-                            {/* <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                            </Carousel.Caption> */}
+                            <img className="d-block w-100" src="images/slider/3.jpg" alt="Third slide" />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img className="d-block w-100" src="images/slider/4.png" alt="Third slide" />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img className="d-block w-100" src="images/slider/5.png" alt="Third slide" />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img className="d-block w-100" src="images/slider/6.png" alt="Third slide" />
                         </Carousel.Item>
                     </Carousel>
-                    <div className="overlay_slide_back_div text-right">
+                    {/* <div className="overlay_slide_back_div text-right">
                         <object data="images/overlay_slide_back.svg"></object>
-                    </div>
+                    </div> */}
                 </div>
                 
             </div>
-            <div className={styles.third_container}>
+            <div className={styles.third_container} style={{"background-image":"url('../public/images/Vector-1.png')"}}>
                 <div className="xr_engine_div">
                     <div className="desktop-container row">
                         <div className="col-6 xrengine_logo mobile-container">
@@ -216,7 +208,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className={styles.fourth_container}>
+            <div className={styles.fourth_container} style={{"background-image":"url('../public/images/Vector-2.png')"}}>
                 <div className="desktop-container row get_touch_div">
                     <div className="col-4 mt-50 get_touch_txt mobile-container">
                         <p className="desktop_section_title text-left">Get in touch</p>

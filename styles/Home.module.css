@@ -20,7 +20,6 @@
 }
 .first_container{
   height: 1440px;
-  background-image: url("/images/background-1.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px -200px;
@@ -40,12 +39,10 @@
 .third_container{
   height: 415.5px;
   margin-top: -158px;
-  background-image: url("/images/Vector-1.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .fourth_container{
-  background-image: url("/images/Vector-2.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 979px;
