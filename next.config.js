@@ -1,4 +1,4 @@
 module.exports = {
     assetPrefix: ".",
-    distDir: 'docs',
+    // distDir: 'docs',
 };

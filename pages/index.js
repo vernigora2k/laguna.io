@@ -5,22 +5,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Carousel from 'react-bootstrap/Carousel' 
 import { useState } from 'react'
 
+import * as gtag from '../lib/gtag'
+
 export default function Home() { 
-    const [modalShown, setShowModal] = useState(false)
+    const [modalShown, setShowModal] = useState(false);
+    const [message, setMessage] = useState("");
 
     const showModal=()=>setShowModal(true);
     const hideModal=()=>setShowModal(false);
+
+    const handleInput = (e) => {
+        console.log(e.target.value);
+        setMessage(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    
+        gtag.event({
+          action: 'submit_form',
+          category: 'Contact',
+          label: message,
+        })
+    
+        setMessage('');
+    }
+
     return (
     <div className={styles.container}>
         <Head>
-            <title>Lander</title>
+            <title>Laguna LABS</title>
             <link rel="icon" href="images/favicon.png" />
             <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'/>
             <link rel="preconnect" href="https://fonts.gstatic.com"/> 
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;900&display=swap" rel="stylesheet"/>
         </Head>
-
-
             <div className={modalShown?styles.menu_container:"hidden"}>
                 <div className="row pt-5rem pb-2">
                     <div className="col-10">
@@ -103,7 +122,7 @@ export default function Home() {
                     <div className={styles.mission_txt_div}>
                         <p className="desktop_section_title mission_txt_title">Our Mission</p>
                         <div className="pt-4 desktop-container">
-                            <p className="main-text">
+                            <p className="main-text line_3_txt">
                                 We all need to do business and stay connected to loved ones, regardless of what's happening in the world outside. Our applications
                                 are immediates, lightweight, and designed to reach peopel on the devices have today as well as the devices they'll have tomorrow
                             </p>
@@ -190,7 +209,7 @@ export default function Home() {
                 </div>
                 
             </div>
-            <div className={styles.third_container} style={{"background-image":"url('../public/images/Vector-1.png')"}}>
+            <div className={styles.third_container} style={{"background-image":"url('images/Vector-1.png')"}}>
                 <div className="xr_engine_div">
                     <div className="desktop-container row">
                         <div className="col-6 xrengine_logo mobile-container">
@@ -208,7 +227,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className={styles.fourth_container} style={{"background-image":"url('../public/images/Vector-2.png')"}}>
+            <div className={styles.fourth_container} style={{"background-image":"url('images/Vector-2.png')"}}>
                 <div className="desktop-container row get_touch_div">
                     <div className="col-4 mt-50 get_touch_txt mobile-container">
                         <p className="desktop_section_title text-left">Get in touch</p>
@@ -227,10 +246,11 @@ export default function Home() {
                             <input type="text" id="" placeholder="Company"/>
                         </div>
                         <div className="row mt-4">
-                            <textarea type="text" id="" rows="5" placeholder="Describe your Dream"/>
+                            <textarea type="text" id="" rows="5" placeholder="Describe your Dream" 
+                            value={message} onChange={handleInput}/>
                         </div>
                         <div className="row mt-3">
-                            <button className="main_button send_btn">Send</button>
+                            <button className="main_button send_btn" type="button" onClick={handleSubmit}>Send</button>
                         </div>
                     </div>
                 </div>
