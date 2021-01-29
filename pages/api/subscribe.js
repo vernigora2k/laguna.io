@@ -1,7 +1,7 @@
 export default async (req, res) => {
     // 1. Destructure the email address from the request body.
     const { email } = req.body;
-    console.log("email address is:", email);
+  
     if (!email) {
       // 2. Throw an error if an email wasn't provided.
       return res.status(400).json({ error: 'Email is required' });
@@ -11,7 +11,6 @@ export default async (req, res) => {
       // 3. Fetch the environment variables.
       const LIST_ID = process.env.MAILCHIMP_LIST_ID;
       const API_KEY = process.env.MAILCHIMP_API_KEY;
-      console.log("listid, apikey is: ",LIST_ID, API_KEY);
       // 4. API keys are in the form <key>-us3.
       const DATACENTER = API_KEY.split('-')[1];
   
