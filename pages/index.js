@@ -4,6 +4,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Carousel from 'react-bootstrap/Carousel' 
 import { useState } from 'react'
+import Subscribe from '../components/Subscribe';
 
 import * as gtag from '../lib/gtag'
 
@@ -283,7 +284,7 @@ export default function Home() {
 
         {/* <footer className={styles.footer}>
         </footer> */}
-        
+        <Subscribe />
     </div>
     )
 }
