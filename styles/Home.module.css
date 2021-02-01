@@ -28,6 +28,7 @@
 .menu_container{
   height: 100vh;
   width: 100%;
+  max-width: 2000px;
   background: #050012;
 }
 .second_container{

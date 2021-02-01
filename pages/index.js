@@ -4,21 +4,21 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Carousel from 'react-bootstrap/Carousel' 
 import { useState } from 'react'
-import Subscribe from '../components/Subscribe';
+import emailjs from 'emailjs-com';
 
 import * as gtag from '../lib/gtag'
 
 export default function Home() { 
     const [modalShown, setShowModal] = useState(false);
-    const [message, setMessage] = useState("");
+
+    const [firstName, setFirstName]     = useState("");
+    const [secondName, setSecondName]   = useState("");
+    const [emailAddress, setEmailAddress] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [message, setMessage]         = useState("");
 
     const showModal=()=>setShowModal(true);
     const hideModal=()=>setShowModal(false);
-
-    const handleInput = (e) => {
-        console.log(e.target.value);
-        setMessage(e.target.value);
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -29,7 +29,33 @@ export default function Home() {
           label: message,
         })
     
+        setFirstName('');
+        setSecondName('');
+        setEmailAddress('');
+        setCompanyName('');
         setMessage('');
+
+        var templateParams = {
+            from_name:  firstName + " " + secondName,
+            to_name:    'Administrator',
+            company:    companyName,
+            email:      emailAddress,
+            message:    message
+        };
+
+        emailjs.send(
+            process.env.SERVICE_ID, 
+            process.env.TEMPLATE_ID, 
+            templateParams, 
+            process.env.USER_ID
+        ).then(
+            result => {
+                alert('Message Sent, I\'ll get back to you shortly', result.text);
+            },
+            error => {
+                alert( 'An error occured, Plese try again',error.text);
+            }
+        )
     }
 
     return (
@@ -60,17 +86,18 @@ export default function Home() {
                         <div className="devide_line"></div>
                     </div>
                 </div>
-                <div className="row text-center menu-div mt-5">
+                <div className="row text-center menu-div pt-5">
                     <p className="col-12 pt-3 menu-txt">Documentation</p>
                     <p className="col-12 pt-3 menu-txt">Faqs</p>
                     <p className="col-12 pt-3 menu-txt">About Us</p>
                     <p className="col-12 pt-3 menu-txt">Support & Contact</p>
                     <p className="col-12 pt-3 menu-txt">Social</p>
-                    
-                    <button className="main_button mt-5">Sign Up</button>
-                    <button className="main_button mt-3 p-0">
-                        <div className="main_button_outline_div">Log In</div>
-                    </button>
+                    <div className="login_div">
+                        <button className="main_button mt-5">Sign Up</button>
+                        <button className="main_button p-0 login_btn">
+                            <div className="main_button_outline_div">Log In</div>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -237,18 +264,18 @@ export default function Home() {
                     </div>
                     <div className="col-8 contact_input_div mt-4 get_touch_input mobile-container">
                         <div className="row">
-                            <input type="text" className={styles.firstname_input} placeholder="First Name"/>
-                            <input type="text" className={styles.lastname_input} placeholder="Last Name"/>
+                            <input type="text" className={styles.firstname_input} value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="First Name"/>
+                            <input type="text" className={styles.lastname_input} value={secondName} onChange={(e) => setSecondName(e.target.value)} placeholder="Last Name"/>
                         </div>
                         <div className="row mt-4">
-                            <input type="text" id="" placeholder="Email"/>
+                            <input type="text" id="" value={emailAddress} onChange={(e) => setEmailAddress(e.target.value)} placeholder="Email"/>
                         </div>
                         <div className="row mt-4">
-                            <input type="text" id="" placeholder="Company"/>
+                            <input type="text" id="" value={companyName} onChange={(e) => setCompanyName(e.target.value)} placeholder="Company"/>
                         </div>
                         <div className="row mt-4">
                             <textarea type="text" id="" rows="5" placeholder="Describe your Dream" 
-                            value={message} onChange={handleInput}/>
+                            value={message} onChange={(e) => setMessage(e.target.value)}/>
                         </div>
                         <div className="row mt-3">
                             <button className="main_button send_btn" type="button" onClick={handleSubmit}>Send</button>
@@ -284,7 +311,7 @@ export default function Home() {
 
         {/* <footer className={styles.footer}>
         </footer> */}
-        <Subscribe />
+        
     </div>
     )
 }
