@@ -2,61 +2,17 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Carousel from 'react-bootstrap/Carousel' 
 import { useState } from 'react'
-import emailjs from 'emailjs-com';
-
-import * as gtag from '../lib/gtag'
+import TopMenu from '../components/topMenu'
+import LagunaCarousel from '../components/lagunaCarousel'
+import LagunaFooter from '../components/lagunaFooter'
+import LagunaContact from '../components/lagunaContact'
 
 export default function Home() { 
     const [modalShown, setShowModal] = useState(false);
 
-    const [firstName, setFirstName]     = useState("");
-    const [secondName, setSecondName]   = useState("");
-    const [emailAddress, setEmailAddress] = useState("");
-    const [companyName, setCompanyName] = useState("");
-    const [message, setMessage]         = useState("");
-
     const showModal=()=>setShowModal(true);
     const hideModal=()=>setShowModal(false);
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    
-        gtag.event({
-          action: 'submit_form',
-          category: 'Contact',
-          label: message,
-        })
-    
-        setFirstName('');
-        setSecondName('');
-        setEmailAddress('');
-        setCompanyName('');
-        setMessage('');
-
-        var templateParams = {
-            from_name:  firstName + " " + secondName,
-            to_name:    'Administrator',
-            company:    companyName,
-            email:      emailAddress,
-            message:    message
-        };
-
-        emailjs.send(
-            process.env.SERVICE_ID, 
-            process.env.TEMPLATE_ID, 
-            templateParams, 
-            process.env.USER_ID
-        ).then(
-            result => {
-                alert('Message Sent, I\'ll get back to you shortly', result.text);
-            },
-            error => {
-                alert( 'An error occured, Plese try again',error.text);
-            }
-        )
-    }
 
     return (
     <div className={styles.container}>
@@ -67,41 +23,9 @@ export default function Home() {
             <link rel="preconnect" href="https://fonts.gstatic.com"/> 
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;900&display=swap" rel="stylesheet"/>
         </Head>
-            <div className={modalShown?styles.menu_container:"hidden"}>
-                <div className="row pt-5rem pb-2">
-                    <div className="col-10">
-                        <div className="desktop-container">
-                            <span className={styles.logo_title_gradiant}>LAGUNA </span> 
-                            <span className={[styles.logo_title_gradiant, styles.white_font].join(" ")}>LABS</span>
-                        </div>
-                    </div>
-                    <div className="col-2 menu_icon_div">
-                        <button className={styles.menu_btn} onClick={hideModal}>
-                            <FontAwesomeIcon icon={faBars} className={styles.menu_icon}/>
-                        </button>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col">
-                        <div className="devide_line"></div>
-                    </div>
-                </div>
-                <div className="row text-center menu-div pt-5">
-                    <p className="col-12 pt-3 menu-txt">Documentation</p>
-                    <p className="col-12 pt-3 menu-txt">Faqs</p>
-                    <p className="col-12 pt-3 menu-txt">About Us</p>
-                    <p className="col-12 pt-3 menu-txt">Support & Contact</p>
-                    <p className="col-12 pt-3 menu-txt">Social</p>
-                    <div className="login_div">
-                        <button className="main_button mt-5">Sign Up</button>
-                        <button className="main_button p-0 login_btn">
-                            <div className="main_button_outline_div">Log In</div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        <main className={!modalShown?styles.main:"hidden"}>
+        {modalShown?
+        <TopMenu hideModal={hideModal}/>:
+        <main className={styles.main}>
             <div className={[styles.first_container,styles.subcontainer].join(" ")}
             style={{"background-image":"url('images/background-1.jpeg')"}}>
                 <div className="row pt-5rem pb-2">
@@ -200,41 +124,7 @@ export default function Home() {
                         <object className="mt-5 pt-5" data="images/overlay_mark.svg"></object>
                     </div>
                 </div>
-                <div className="row position_relative">
-                    <Carousel className={styles.main_carousel} 
-                        prevIcon={<object data="images/arrow_back.svg" type="image/svg+xml"/>}
-                        nextIcon={<object data="images/arrow_forward.svg" type="image/svg+xml"/>}
-                        indicators={false}>
-                        <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src="images/slider/1.jpg"
-                            alt="First slide"/>
-                            {/* <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption> */}
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="d-block w-100" src="images/slider/2.png" alt="Third slide" />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="d-block w-100" src="images/slider/3.jpg" alt="Third slide" />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="d-block w-100" src="images/slider/4.png" alt="Third slide" />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="d-block w-100" src="images/slider/5.png" alt="Third slide" />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="d-block w-100" src="images/slider/6.png" alt="Third slide" />
-                        </Carousel.Item>
-                    </Carousel>
-                    {/* <div className="overlay_slide_back_div text-right">
-                        <object data="images/overlay_slide_back.svg"></object>
-                    </div> */}
-                </div>
+                <LagunaCarousel />
                 
             </div>
             <div className={styles.third_container} style={{"background-image":"url('images/Vector-1.png')"}}>
@@ -262,55 +152,12 @@ export default function Home() {
                         <p className="desktop_sub_title pr-5">Contact us for start of partnership</p>
                         <img src="images/contact_rocket.png" className="mt-4 mobile_none contact_rocket"/>
                     </div>
-                    <div className="col-8 contact_input_div mt-4 get_touch_input mobile-container">
-                        <div className="row">
-                            <input type="text" className={styles.firstname_input} value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="First Name"/>
-                            <input type="text" className={styles.lastname_input} value={secondName} onChange={(e) => setSecondName(e.target.value)} placeholder="Last Name"/>
-                        </div>
-                        <div className="row mt-4">
-                            <input type="text" id="" value={emailAddress} onChange={(e) => setEmailAddress(e.target.value)} placeholder="Email"/>
-                        </div>
-                        <div className="row mt-4">
-                            <input type="text" id="" value={companyName} onChange={(e) => setCompanyName(e.target.value)} placeholder="Company"/>
-                        </div>
-                        <div className="row mt-4">
-                            <textarea type="text" id="" rows="5" placeholder="Describe your Dream" 
-                            value={message} onChange={(e) => setMessage(e.target.value)}/>
-                        </div>
-                        <div className="row mt-3">
-                            <button className="main_button send_btn" type="button" onClick={handleSubmit}>Send</button>
-                        </div>
-                    </div>
+                    <LagunaContact />
                 </div>
             </div>
-            <div className={styles.footer}>
-                <div className="desktop-container row footer-div">
-                    <div className="col-5 mobile-container text-left">
-                        <object data="images/logo_lagunalabs.svg" className={styles.logo_lagunalabs}/>
-                    </div>
-                    <div className="col-7 social_icon_div mobile-container">
-                        <object data="images/twitter.svg" className="twitter-svg"/>
-                        <object data="images/linkedin.svg"/>
-                        <object data="images/facebook.svg"/>
-                        <object data="images/email.svg"/>
-                        <object data="images/github.svg"/>
-                    </div>
-                    <div className="col-5 mobile-container privacy-txt-div">
-                        <div className="width-200 pt-3 bottom_main_text_div_left">
-                            <p className="bottom_main_text">Privacy Policy</p>
-                            <p className="bottom_main_text">Support</p>
-                        </div>
-                    </div>
-                    <div className="col-7 pt-3 mobile-container terms-txt-div">
-                        <span className="bottom_main_text">Terms of service&nbsp;</span>
-                        <span className="bottom_main_text">@ 2020 Laguna Labs Team. All Rights Reserved</span>
-                    </div>
-                </div>
-            </div>
+            <LagunaFooter />
         </main>
-
-        {/* <footer className={styles.footer}>
-        </footer> */}
+        }
         
     </div>
     )
