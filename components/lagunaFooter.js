@@ -11,11 +11,21 @@ export default class LagunaFooter extends Component{
                         <object data="images/logo_lagunalabs.svg" className={styles.logo_lagunalabs}/>
                     </div>
                     <div className="col-7 social_icon_div mobile-container">
-                        <object data="images/twitter.svg" className="twitter-svg"/>
-                        <object data="images/linkedin.svg"/>
-                        <object data="images/facebook.svg"/>
-                        <object data="images/email.svg"/>
-                        <object data="images/github.svg"/>
+                        <a href="https://twitter.com/laguna_labs" target="_blank">
+                            <img src="images/twitter.svg" className="twitter-svg"/>
+                        </a>
+                        <a href="https://www.linkedin.com/company/lagunalabs" target="_blank">
+                            <img src="images/linkedin.svg"/>
+                        </a>
+                        <a href="https://www.facebook.com/xrengine" target="_blank">
+                            <img src="images/facebook.svg"/>
+                        </a>
+                        <a href="https://www.linkedin.com/company/lagunalabs" target="_blank">
+                            <img src="images/email.svg"/>
+                        </a>
+                        <a href="https://github.com/xr3ngine" target="_blank">
+                            <img src="images/github.svg"/>
+                        </a>
                     </div>
                     <div className="col-5 mobile-container privacy-txt-div">
                         <div className="width-200 pt-3 bottom_main_text_div_left">

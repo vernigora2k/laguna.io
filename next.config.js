@@ -2,7 +2,8 @@ module.exports = {
     assetPrefix: ".",
     // distDir: 'docs',
     env: {
-        MAILCHIMP_LIST_ID: "eca00469c5",
-        MAILCHIMP_API_KEY: "52b38310538ae63ccc22db9dbf80384b-us7"
+        USER_ID: 'user_GNtZiE5ERGza5BjYkH5tX',
+        TEMPLATE_ID: 'template_ccqlso9',
+        SERVICE_ID: 'service_ha9an2o'
     },
 };

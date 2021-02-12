@@ -14,6 +14,34 @@ export default function Home() {
     const showModal=()=>setShowModal(true);
     const hideModal=()=>setShowModal(false);
 
+    const goToGetInTouch=()=>{
+        var offsetYContact=document.getElementById("get_touch_div").getBoundingClientRect().top-document.body.getBoundingClientRect().top;
+        
+        doScrolling( offsetYContact,400);
+    }
+
+    const doScrolling=(elementY, duration)=>{ 
+        var startingY = 0;//window.pageYOffset;
+        var diff = elementY - startingY;
+        var start;
+      
+        // Bootstrap our animation - it will get called right before next frame shall be rendered.
+        window.requestAnimationFrame(function step(timestamp) {
+          if (!start) start = timestamp;
+          // Elapsed milliseconds since start of scrolling.
+          var time = timestamp - start;
+          // Get percent of completion in range [0, 1].
+          var percent = Math.min(time / duration, 1);
+      
+          window.scrollTo(0, startingY + diff * percent);
+      
+          // Proceed with animation as long as we wanted it to.
+          if (time < duration) {
+            window.requestAnimationFrame(step);
+          }
+        })
+      }
+
     return (
     <div className={styles.container}>
         <Head>
@@ -27,7 +55,7 @@ export default function Home() {
         <TopMenu hideModal={hideModal}/>:
         <main className={styles.main}>
             <div className={[styles.first_container,styles.subcontainer].join(" ")}
-            style={{"background-image":"url('images/background-1.jpeg')"}}>
+            style={{"backgroundImage":"url('images/background-1.jpeg')"}}>
                 <div className="row pt-5rem pb-2">
                     <div className="col-10">
                         <div className="desktop-container">
@@ -35,11 +63,11 @@ export default function Home() {
                             <span className={[styles.logo_title_gradiant, styles.white_font].join(" ")}>LABS</span>
                         </div>
                     </div>
-                    <div className="col-2 menu_icon_div">
+                    {/* <div className="col-2 menu_icon_div">
                         <button className={styles.menu_btn} onClick={showModal}>
                             <FontAwesomeIcon icon={faBars} className={styles.menu_icon}/>
                         </button>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="row">
                     <div className="col">
@@ -63,7 +91,9 @@ export default function Home() {
                     <p className={styles.small_text}>Anywhere and everywhere</p> 
                 </div>
                 <div className="desktop-container mt-5">
-                    <button className="main_button">Get In Touch</button>
+                    {/* <a href="#get_touch_div"> */}
+                        <button className="main_button" onClick={goToGetInTouch}>Get In Touch</button>
+                    {/* </a> */}
                 </div>
                 <div className={styles.line_30_degree_group}>
                     <div className={styles.line_top_1}></div>
@@ -127,7 +157,7 @@ export default function Home() {
                 <LagunaCarousel />
                 
             </div>
-            <div className={styles.third_container} style={{"background-image":"url('images/Vector-1.png')"}}>
+            <div className={styles.third_container} style={{"backgroundImage":"url('images/Vector-1.png')"}}>
                 <div className="xr_engine_div">
                     <div className="desktop-container row">
                         <div className="col-6 xrengine_logo mobile-container">
@@ -140,13 +170,15 @@ export default function Home() {
                             <p className="main-text text-left">
                                 XREngine is a cross platform social engine for realtime voice, video, chat, avatars and computer vision. Built with scalability in mind on web standards, it's the fastest way to deliver scalable real-time apps.
                             </p>
-                            <button className="main_button mt-5 mobile_none">Visit Project Page</button>
+                            <a href="http://theoverlay.io">
+                                <button className="main_button mt-5 mobile_none">Visit Project Page</button>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className={styles.fourth_container} style={{"background-image":"url('images/Vector-2.png')"}}>
-                <div className="desktop-container row get_touch_div">
+            <div className={styles.fourth_container} style={{"backgroundImage":"url('images/Vector-2.png')"}}>
+                <div className="desktop-container row get_touch_div" id="get_touch_div">
                     <div className="col-4 mt-50 get_touch_txt mobile-container">
                         <p className="desktop_section_title text-left">Get in touch</p>
                         <p className="desktop_sub_title pr-5">Contact us for start of partnership</p>

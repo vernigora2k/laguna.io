@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: Inter;
   background-color: black!important;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -133,7 +134,7 @@ p{
 .social_icon_div{
   text-align: right;
 }
-.social_icon_div object{
+.social_icon_div img{
   margin-left: 2rem;
 }
 .devide_line{
