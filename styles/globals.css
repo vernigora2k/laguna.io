@@ -386,14 +386,26 @@ p{
   .vertical-line-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 55px;
+    margin-top: -15px;
+    position: relative;
   }
   .vertical-line-container .col-3 {
-    /* display: none; */
     position: absolute;
   }
   .vertical-line-container .col-2 {
     padding: 0;
+  }
+  .vertical-line-container .circle-1 {
+    top: 235px;
+    left: -30px;
+  }
+  .line-2>div:nth-child(2){
+    /* position: relative; */
+    left: 60px;
+  }
+  .vertical-line-container .circle-3 {
+    top: -50px;
+    right: -10px;
   }
   .vertical-line-container .line-1{
     position: relative;
@@ -420,6 +432,10 @@ p{
     width: 40px;
     margin-left: 1rem;
   }
+  .mission_txt_title {
+    margin-top: 2rem;
+    margin-bottom: 0.3rem;
+  }
 }
 @media (max-width: 376px) {
   .desktop-container{
@@ -428,10 +444,15 @@ p{
   .vertical-line-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 65px;
+    /* margin-top: 15px; */
   }
   .mobile-container {
     margin-top: -3rem;
+  }
+}
+@media (max-width: 330px) {
+  .vertical-line-container{
+    margin-top: 50px;
   }
 }
 

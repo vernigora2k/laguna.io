@@ -115,7 +115,7 @@ export default function Home() {
             <div className={styles.second_container}>
                 
                 <div className="row desktop-container vertical-line-container">
-                    <div className="col-3">
+                    <div className="col-3 circle-1">
                         <div className={styles.middle_component_circle_1}></div>
                     </div>
                     <div className="col-2 line-1">
@@ -138,7 +138,7 @@ export default function Home() {
                         </div>
                     </div>
                     
-                    <div className="col-3">
+                    <div className="col-3 circle-3">
                         <div className={styles.middle_component_circle_3}></div>
                     </div>
                 </div>

@@ -329,8 +329,9 @@
     line-height: 5rem;
   }
   .col-3 {
-    display: none!important;
+    /* display: none!important; */
   }
+
 }
 @media (max-width: 330px) {
   .big_text{
