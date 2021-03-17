@@ -56,7 +56,7 @@ export default function Home() {
         <main className={styles.main}>
             <div className={[styles.first_container,styles.subcontainer].join(" ")}
             style={{"backgroundImage":"url('images/background-1.jpeg')"}}>
-                <div className="row pt-5rem pb-2">
+                <div className="row pt-5rem pb-2 header">
                     <div className="col-10">
                         <div className="desktop-container">
                             <span className={styles.logo_title_gradiant}>LAGUNA </span> 
@@ -114,24 +114,24 @@ export default function Home() {
             </div>
             <div className={styles.second_container}>
                 
-                <div className="row desktop-container">
+                <div className="row desktop-container vertical-line-container">
                     <div className="col-3">
                         <div className={styles.middle_component_circle_1}></div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-2 line-1">
                         <div className={styles.middle_component_line_div_1}>
                             <div className={styles.middle_component_line_gap_1}></div>
                             <object className={styles.middle_component_line_1} data="images/polygon_1.svg" type="image/svg+xml"/>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-2 line-2">
                         <div className={styles.middle_component_line_div_2}>
                             <div className={styles.middle_component_line_gap_2}></div>
                             <object data="images/polygon_2.svg" type="image/svg+xml"/>
                         </div>
                         <div className={styles.middle_component_circle_2}></div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-2 line-3">
                         <div className={styles.middle_component_line_div_3}>
                             <div className={styles.middle_component_line_gap_1}></div>
                             <object className={styles.middle_component_line_1} data="images/polygon_1.svg" type="image/svg+xml"/>

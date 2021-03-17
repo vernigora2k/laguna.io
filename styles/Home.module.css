@@ -320,7 +320,11 @@
 }
 @media (max-width: 420px) {
   .first_container{
-    background-position: -600px -200px;
+    /* background-size: 1100px; */
+    background-position: -500px -70px;
+    z-index: 20;
   }
-  
+  .col-3 {
+    display: none!important;
+  }
 }
