@@ -416,7 +416,7 @@ p{
     right: -25px;
   }
   .mobile-container{
-    width: calc(100% - 4rem)!important;
+    width: calc(100% - 2rem)!important;
     margin-top: -2.5rem;
   }
   .devide_line{
@@ -436,6 +436,13 @@ p{
     margin-top: 2rem;
     margin-bottom: 0.3rem;
   }
+  .full-name-inputs {
+    margin-top: -40px;
+  }
+  #get_touch_div {
+    background: radial-gradient(361.37% 94.92% at 0% 100%, #160B2E 0%, #050012 100%);
+    border-radius: 120px;
+  }
 }
 @media (max-width: 376px) {
   .desktop-container{
@@ -449,6 +456,9 @@ p{
   .mobile-container {
     margin-top: -3rem;
   }
+  .social_icon_div img {
+    margin-left: 1rem;
+}
 }
 @media (max-width: 330px) {
   .vertical-line-container{

@@ -175,15 +175,19 @@
 .middle_component_line_gap_1{
   width: 16px;
   height: 27px;
-  background: rgba(82, 54, 255, 0.1);
   backdrop-filter: blur(64px);
+  background-image: url(/images/rocket-line.svg);
+  background-position: left -2px bottom -1px;
+  background-repeat: no-repeat;
   margin: 0 auto -30px;
 }
 .middle_component_line_gap_2{
   width: 17px;
   height: 27px;
-  background: rgba(82, 54, 255, 0.1);
   backdrop-filter: blur(64px);
+  background-image: url(/images/rocket-line.svg);
+  background-position: left -2px bottom -1px;
+  background-repeat: no-repeat;
   margin: 0 auto -30px;
 }
 .middle_component_line_div_2{
@@ -312,6 +316,9 @@
   .line_30_degree_group {
     margin-top: -2rem;
   }
+  .main_carousel{
+    margin-top: 200px;
+  }
   .big_text{
     font-size: 4.5rem;
     line-height: 5rem;
@@ -328,10 +335,9 @@
     font-size: 4rem;
     line-height: 5rem;
   }
-  .col-3 {
-    /* display: none!important; */
+  .contact_input_div > div.row {
+    padding-top: -20px;
   }
-
 }
 @media (max-width: 330px) {
   .big_text{
@@ -339,5 +345,8 @@
   }
   .line_30_degree_group {
     margin-top: 0.2rem;
+  }
+  .main_carousel{
+    margin-top: 230px;
   }
 }

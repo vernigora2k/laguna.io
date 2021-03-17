@@ -64,7 +64,7 @@ export default class LagunaContact extends Component{
     render(){
         return (
                     <div className="col-8 contact_input_div mt-4 get_touch_input mobile-container">
-                        <div className="row">
+                        <div className="row full-name-inputs">
                             <input type="text" className={styles.firstname_input} value={this.state.firstName} name="firstName" onChange={this.handleChange} placeholder="First Name"/>
                             <input type="text" className={styles.lastname_input} value={this.state.secondName} name="secondName" onChange={this.handleChange} placeholder="Last Name"/>
                         </div>
