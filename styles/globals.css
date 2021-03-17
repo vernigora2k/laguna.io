@@ -135,7 +135,7 @@ p{
   text-align: right;
 }
 .social_icon_div img{
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
 }
 .devide_line{
   width: 31rem;
@@ -428,9 +428,13 @@ p{
   .xrenginLogImg{
     width: 100%;
   }
+  .social_icon_div {
+    display: flex;
+    justify-content: space-between;
+  }
   .social_icon_div object{
     width: 40px;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
   }
   .mission_txt_title {
     margin-top: 2rem;
@@ -456,9 +460,9 @@ p{
   .mobile-container {
     margin-top: -3rem;
   }
-  .social_icon_div img {
+  /* .social_icon_div img {
     margin-left: 1rem;
-}
+  } */
 }
 @media (max-width: 330px) {
   .vertical-line-container{

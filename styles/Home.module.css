@@ -329,6 +329,11 @@
   .second_container{
     padding: 230px 0;
   }
+  .footer{
+    height: 350px;
+    padding-top: 150px;
+    margin-top: -10px;
+  }
 }
 @media (max-width: 420px) {
   .big_text{
