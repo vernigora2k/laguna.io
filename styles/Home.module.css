@@ -305,7 +305,12 @@
 }
 @media (max-width: 500px) {
   .first_container{
-    background-position: -550px -200px;
+    background-size: 900px;
+    background-position: -340px 30px;
+    z-index: 20;
+  }
+  .line_30_degree_group {
+    margin-top: -2rem;
   }
   .big_text{
     font-size: 4.5rem;
@@ -319,12 +324,19 @@
   }
 }
 @media (max-width: 420px) {
-  .first_container{
-    /* background-size: 1100px; */
-    background-position: -500px -70px;
-    z-index: 20;
+  .big_text{
+    font-size: 4rem;
+    line-height: 5rem;
   }
   .col-3 {
     display: none!important;
+  }
+}
+@media (max-width: 330px) {
+  .big_text{
+    font-size: 3.5rem;
+  }
+  .line_30_degree_group {
+    margin-top: 0.2rem;
   }
 }
