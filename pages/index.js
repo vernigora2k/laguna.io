@@ -63,11 +63,11 @@ export default function Home() {
                             <span className={[styles.logo_title_gradiant, styles.white_font].join(" ")}>LABS</span>
                         </div>
                     </div>
-                    {/* <div className="col-2 menu_icon_div">
+                    <div className="col-2 menu_icon_div">
                         <button className={styles.menu_btn} onClick={showModal}>
                             <FontAwesomeIcon icon={faBars} className={styles.menu_icon}/>
                         </button>
-                    </div> */}
+                    </div>
                 </div>
                 <div className="row">
                     <div className="col">

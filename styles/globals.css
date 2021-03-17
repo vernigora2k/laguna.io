@@ -135,7 +135,7 @@ p{
   text-align: right;
 }
 .social_icon_div img{
-  /* margin-left: 2rem; */
+  margin-left: 1.5rem;
 }
 .devide_line{
   width: 31rem;
@@ -460,9 +460,9 @@ p{
   .mobile-container {
     margin-top: -3rem;
   }
-  /* .social_icon_div img {
-    margin-left: 1rem;
-  } */
+  .social_icon_div img{
+    margin-left: 0;
+  }
 }
 @media (max-width: 330px) {
   .vertical-line-container{
