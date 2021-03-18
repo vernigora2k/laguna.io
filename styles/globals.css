@@ -372,6 +372,12 @@ p{
     margin-top: -2.5rem;
     position: relative;
     left: -1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu_icon_div {
+    display: flex;
+    justify-content: flex-end;
   }
   .devide_line {
     position: relative;
@@ -463,10 +469,16 @@ p{
   .social_icon_div img{
     margin-left: 0;
   }
+  .menu-div-item {
+    margin-top: -0.3rem;
+  }
 }
 @media (max-width: 330px) {
   .vertical-line-container{
     margin-top: 50px;
+  }
+  .menu-div-item {
+    margin-top: -1rem;
   }
 }
 

@@ -106,7 +106,7 @@ export default function Home() {
                         <div className="pt-4 desktop-container">
                             <p className="main-text line_3_txt">
                                 We all need to do business and stay connected to loved ones, regardless of what's happening in the world outside. Our applications
-                                are immediates, lightweight, and designed to reach peopel on the devices have today as well as the devices they'll have tomorrow
+                                are immediates, lightweight, and designed to reach people on the devices thay have today as well as the devices they'll have tomorrow
                             </p>
                         </div>
                     </div>
